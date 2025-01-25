@@ -1,0 +1,25 @@
+{% include "header.html" %}
+
+<header >
+    <div class="container col-xxl-8 px-4 py-5">
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+          <img src="static\images\home.jpg" class="d-block mx-lg-auto img-fluid" alt="Welcome Themes" width="700" height="500" loading="lazy">
+        </div>
+        <div class="col-lg-6">
+          <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3"><strong class="text-primary">Organize</strong> Your Life, One <strong class="text-primary">Task </strong>at a Time</h1>
+          <p class="lead"> Say goodbye to chaos and hello to clarity. Sign up for <strong class="text-primary">TaskFlow</strong> and effortlessly manage your tasks, deadlines, and goals.</p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="{{url_for('register')}}" type="button" class="btn btn-primary">
+                Get Started for Free
+            </a>
+            <a href="{{url_for('sign_in')}}" type="button" class="btn btn-primary">
+              Sign In
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+</header>
+
+{% include "footer.html" %}
