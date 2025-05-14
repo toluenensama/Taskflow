@@ -4,9 +4,16 @@ from flask_bcrypt import Bcrypt
 from datetime import date,timedelta,datetime
 import time
 from flask_sqlalchemy import SQLAlchemy
+import os
+from dotenv import find_dotenv,load_dotenv
+
+
+
+dotenv_path = find_dotenv()
+load_dotenv(dotenv_path)
 
 app = Flask(__name__) 
-app.config['SECRET_KEY'] = 'e9f49677f8a56c5468e3728f43f57a28f7e7e0211e3892498e844ea1da3d49536dc5693becb7'
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config["REMEMBER_COOKIE_DURATION"] = timedelta(days=30)  # Adjust duration as needed
